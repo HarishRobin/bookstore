@@ -3,7 +3,7 @@ const router=express.Router();
 
 const Book=require('../../models/Book');
 
-router.get('/test',(req,res)=>res,send('Book Route testing..'));
+router.get('/test',(req,res)=>res.send('Book Route testing..'));
 
 router.get('/',(req,res)=>{
     Book.find().then(books => res.json(books)).catch(err => res.status(404).json({nobookfound:'No Books Found'}));
