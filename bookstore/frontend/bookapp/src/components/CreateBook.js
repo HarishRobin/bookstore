@@ -45,7 +45,7 @@ class CreateBook extends Component {
             this.props.history.push('/');
         })
         .catch(err => {
-            console.log("Error in CreateBook!..");
+            console.log("Error in CreateBook!..\n"+err);
         })
     };
 
@@ -67,32 +67,32 @@ class CreateBook extends Component {
                             </p>
                             <form noValidate onSubmit={this.onSubmit}>
                                 <div className='form-group'>
-                                    <input type='text' placeholder='Book Title' name='bookTitle' className='form-control' value={this.state.title} onChange={this.onChange}/>
+                                    <input type='text' placeholder='Book Title' name='title' className='form-control' value={this.state.title} onChange={this.onChange}/>
                                 </div>
                                 <br/>
 
                                 <div className='form-group'>
-                                    <input type='text' placeholder='ISBN' name='bookISBN' className='form-control' value={this.state.isbn} onChange={this.onChange}/>
+                                    <input type='text' placeholder='ISBN' name='isbn' className='form-control' value={this.state.isbn} onChange={this.onChange}/>
                                 </div>
                                 <br/>
                                 
                                 <div className='form-group'>
-                                    <input type='text' placeholder='Author' name='bookAuthor' className='form-control' value={this.state.author} onChange={this.onChange}/>
+                                    <input type='text' placeholder='Author' name='author' className='form-control' value={this.state.author} onChange={this.onChange}/>
                                 </div>
                                 <br/>
 
                                 <div className='form-group'>
-                                    <input type='textarea' placeholder='Describe the Book' name='bookDesc' className='form-control' value={this.state.description} onChange={this.onChange}/>
+                                    <input type='textarea' placeholder='Describe the Book' name='description' className='form-control' value={this.state.description} onChange={this.onChange}/>
                                 </div>
                                 <br/>
 
                                 <div className='form-group'>
-                                    <input type='date' placeholder='Date of Publish' name='bookPublishDate' className='form-control' value={this.state.published_date} onChange={this.onChange}/>
+                                    <input type='date' placeholder='Date of Publish' name='published_date' className='form-control' value={this.state.published_date} onChange={this.onChange}/>
                                 </div>
                                 <br/>
 
                                 <div className='form-group'>
-                                    <input type='text' placeholder='Published by' name='bookPublisher' className='form-control' value={this.state.publisher} onChange={this.onChange}/>
+                                    <input type='text' placeholder='Published by' name='publisher' className='form-control' value={this.state.publisher} onChange={this.onChange}/>
                                 </div>
                                 <br/>
 

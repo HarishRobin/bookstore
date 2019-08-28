@@ -13,7 +13,7 @@ class ShowBookDetails extends Component {
     }
 
     componentDidMount() {
-        console.log("Print id: " + this.props.match.params.id);
+        //console.log("Print id: " + this.props.match.params.id);
         axios.get('http://localhost:8082/api/books/'+this.props.match.params.id)
         .then(res => {
             console.log("Print-showBookDetails-API-response: " + res.data);
@@ -22,17 +22,17 @@ class ShowBookDetails extends Component {
             })
         })
         .catch(err => {
-            console.log("Error in Show Book Details");
+            console.log("Error in Show Book Details\n"+err);
         })
     };
 
     onDeleteClick(id) {
-        axios.delete('http://localhost:8082.api/books/'+id)
+        axios.delete(`http://localhost:8082/api/books/${id}`)
         .then(res => {
             this.props.history.push('/');
         })
         .catch(err => {
-            console.log("Error in ShowBookDetails DeleteClick");
+            console.log("Error in ShowBookDetails DeleteClick"+err);
         })
     };
 
@@ -40,21 +40,12 @@ class ShowBookDetails extends Component {
         const book=this.state.book;
         let BookItem = <div>
             <table className="table table-hover table-dark">
-                {
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                    </tr>
-                </thead>
-                }
+                
                 <tbody>
                     <tr>
                         <th scope="row">1</th>
                         <td>Title</td>
-                        <td>{ book.title }</td>
+                        <td>{ this.state.book.title }</td>
                     </tr>
                     <tr>
                         <th scope="row">2</th>
